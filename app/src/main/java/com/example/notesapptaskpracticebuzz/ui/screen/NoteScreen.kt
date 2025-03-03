@@ -41,7 +41,17 @@ fun NoteScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(12.dp)
                 .border(2.dp, Color.Black)
-                .padding(10.dp)
+                .padding(10.dp),
+            decorationBox = { innerTextField ->
+                if (addNewNote.isEmpty()) {
+                    Text(
+                        text = "Enter your note...",
+                        color = Color.Gray,
+                        fontSize = 20.sp
+                    )
+                }
+                innerTextField()
+            }
 
         )
         Button(
